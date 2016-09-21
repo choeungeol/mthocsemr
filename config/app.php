@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Mthocsemr',
 
     /*
     |--------------------------------------------------------------------------
@@ -38,20 +38,20 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
-    |--------------------------------------------------------------------------
-    | Application URL
-    |--------------------------------------------------------------------------
-    |
-    | This URL is used by the console to properly generate URLs when using
-    | the Artisan command line tool. You should set this to the root of
-    | your application so that it is used when running Artisan tasks.
-    |
-    */
+     |--------------------------------------------------------------------------
+     | Application URL
+     |--------------------------------------------------------------------------
+     |
+     | This URL is used by the console to properly generate URLs when using
+     | the Artisan command line tool. You should set this to the root of
+     | your application so that it is used when running Artisan tasks.
+     |
+     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://mthocsemr.app'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Seoul',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ko',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,8 +162,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
+        Barryvdh\Debugbar\ServiceProvider::class,
+         /*
          * Package Service Providers...
          */
 
@@ -225,6 +225,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
