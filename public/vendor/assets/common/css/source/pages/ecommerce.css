@@ -1,0 +1,190 @@
+/*
+ * ECOMMERCE
+ */
+.cui-ecommerce-dashboard-info {
+    margin-bottom: 30px;
+}
+
+.cui-ecommerce-dashboard-info__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #24222f;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.cui-ecommerce-dashboard-info__description {
+    font-size: 24px;
+}
+
+.cui-ecommerce-dashboard-info__block .nav-tabs a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #24222f;
+}
+
+.cui-ecommerce-dashboard-info__chart {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cui-ecommerce-dashboard-info__chart__chart {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cui-ecommerce--dashboard--list--img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #eceff4;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.cui-ecommerce--dashboard--list--img img {
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.cui-ecommerce--catalog--item {
+    padding: 20px;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    border: 1px solid #dfe4ed;
+    margin-bottom: 35px;
+    position: relative;
+    background: #ffffff;
+}
+
+.cui-ecommerce--catalog--item--status {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-width: 25px;
+    border-style: solid;
+    width: 0px;
+    height: 0px;
+    border-color: #fb434a transparent transparent #fb434a;
+}
+
+.cui-ecommerce--catalog--item--status--title {
+    position: relative;
+    top: -6px;
+    left: -17px;
+    display: block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.cui-ecommerce--catalog--item--img {
+    position: relative;
+    text-align: center;
+    height: 250px;
+}
+
+.cui-ecommerce--catalog--item--img a {
+    display: block;
+}
+
+.cui-ecommerce--catalog--item--img a img {
+    min-height: 250px;
+    max-height: 250px;
+    max-width: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.cui-ecommerce--catalog--item--img a:hover img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+.cui-ecommerce--catalog--item--title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top: 1px solid #dfe4ed;
+    padding-top: 15px;
+    padding-right: 100px;
+    position: relative;
+}
+
+.cui-ecommerce--catalog--item--descr {
+    padding-right: 100px;
+    font-style: italic;
+    color: #bbb8cb;
+}
+
+.cui-ecommerce--catalog--item--descr--sizes {
+    font-style: normal;
+    margin: 15px 0px 10px;
+}
+
+.cui-ecommerce--catalog--item--descr--sizes span {
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid #eceff4;
+    line-height: 14px;
+    -webkit-border-radius: 20px;
+            border-radius: 20px;
+    padding: 3px 3px;
+    min-width: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.cui-ecommerce--catalog--item--price {
+    font-size: 26px;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    text-align: right;
+}
+
+.cui-ecommerce--catalog--item--price--old {
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.cui-ecommerce--catalog--item--like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #bbb8cb;
+}
+
+.cui-ecommerce--catalog--item--like--unliked {
+    display: block;
+}
+
+.cui-ecommerce--catalog--item--like--liked {
+    display: none;
+}
+
+.cui-ecommerce--catalog--item--like:hover .cui-ecommerce--catalog--item--like--unliked, .cui-ecommerce--catalog--item--like__selected .cui-ecommerce--catalog--item--like--unliked {
+    display: none;
+}
+
+.cui-ecommerce--catalog--item--like:hover .cui-ecommerce--catalog--item--like--liked, .cui-ecommerce--catalog--item--like__selected .cui-ecommerce--catalog--item--like--liked {
+    display: block;
+}
+
+.cui-ecommerce--catalog--item--like__selected {
+    color: #827ca1;
+}
