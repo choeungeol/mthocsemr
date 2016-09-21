@@ -75,7 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Idealize
+                    Idealize Counsulting
                 </div>
 
                 <div class="links">
