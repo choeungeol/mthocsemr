@@ -36,6 +36,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 
+
 /**
  * 시스템관리뷰처리
  */
@@ -63,11 +64,7 @@ Route::group(['prefix' => 'receipt', 'middleware' => 'auth'], function() {
 
     Route::get('/', 'ReceiptController@getMain');
 
-    Route::get('view/{apps?}', function($apps = null) {
-        if ($apps === null or $apps == 'intro') {
-            return view('app.receipt.intro.intro');
-        }
-    });
+
 });
 
 Route::group(['prefix' => 'basicbiopsy', 'middleware' => 'auth'], function() {
@@ -92,6 +89,7 @@ Route::group(['prefix' => 'healthcare', 'middleware' => 'auth'], function() {
 
         }
     });
+
 });
 
 Route::group(['prefix' => 'nurseroom', 'middleware' => 'auth'], function() {
