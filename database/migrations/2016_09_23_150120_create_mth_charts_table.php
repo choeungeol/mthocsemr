@@ -18,7 +18,7 @@ class CreateMthChartsTable extends Migration
             $table->integer('patient_id')->unsigned();  //환자id
             $table->foreign('patient_id')->references('id')->on('mth_patients');
             $table->boolean('fregi')->default(false);   //가족등록여부
-            $table->string('vhdetail',200); //내원사유
+            $table->string('vhdetail',200); //메모
             $table->boolean('pregnant')->default(false);    //임신여부
             $table->boolean('ereception')->default(false);  //응급접수
             $table->boolean('hr')->default(false);  //입원접수

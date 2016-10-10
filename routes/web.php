@@ -62,7 +62,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 Route::group(['prefix' => 'receipt', 'middleware' => 'auth'], function() {
 
-    Route::get('/', 'ReceiptController@getMain');
+    Route::get('/', 'ReceiptController@index');
+
+    Route::post('/store', 'ReceiptController@store');
 
 
 });

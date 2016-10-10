@@ -7,6 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 class MthPatient extends Model
 {
 
+    protected $fillable = [
+        'name',
+        'id_num',
+        'birthday',
+        'chk_solar',
+        'buss_num',
+        'phone',
+        'cellphone',
+        'email',
+        'dis_id',
+        'info_agg',
+        'foreigner',
+        'married',
+        'chk_list',
+        'chk_pager',
+        'chk_email',
+        'postal_code',
+        'addr',
+        'addr_detail',
+        'vet_id',
+        'vet_num',
+        'memo',
+    ];
+
     public function mth_charts()
     {
         return $this->belongsTo(MthChart::class);
