@@ -61,7 +61,7 @@ class ReceiptController extends Controller
             'hr' => false,
             'uniques' => '',
             'vhreason' => $request->get('vhreason'),
-            'receivable' => '',
+            'receivable' => 1,
             'xray' => false,
             'bbflag' => false,
             'hcflag' => false,
