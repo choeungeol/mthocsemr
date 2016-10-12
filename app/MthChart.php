@@ -16,7 +16,7 @@ class MthChart extends Model
         'hr',
         'uniques',
         'vhreason',
-
+        'receivable',
         'xray',
         'bbflag',
         'hcflag',
