@@ -13,7 +13,7 @@ class CreateMthPrescribe extends Migration
      */
     public function up()
     {
-        Schema::create('mth_prescribes', function (Blueprint $table) {
+        Schema::create('mth_prescribe', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('chart_id');
@@ -40,6 +40,6 @@ class CreateMthPrescribe extends Migration
      */
     public function down()
     {
-        Schema::drop('mth_prescribes');
+        Schema::drop('mth_prescribe');
     }
 }
