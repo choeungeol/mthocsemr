@@ -16,7 +16,7 @@ class CreateMthPrescribe extends Migration
         Schema::create('mth_prescribes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('chart_id');
+            $table->integer('chart_id')->unsigned();
             $table->foreign('chart_id')->references('id')->on('mth_charts');
             $table->string('teuk',100);         //특
             $table->string('code',100);         //코드

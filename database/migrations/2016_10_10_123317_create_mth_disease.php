@@ -16,7 +16,7 @@ class CreateMthDisease extends Migration
         Schema::create('mth_diseases', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('chart_id');
+            $table->integer('chart_id')->unsigned();
             $table->foreign('chart_id')->references('id')->on('mth_charts');
             $table->string('user_code',100);        //사용자코드
             $table->string('sname',100);            //상병명칭
