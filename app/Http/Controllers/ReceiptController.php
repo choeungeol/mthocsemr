@@ -54,7 +54,7 @@ class ReceiptController extends Controller
 
         $charts = new MthChart([
             'patient_id' => $lastpatients->id,
-            'fregi' => $request->get('fregi'),
+            'fregi' => false,
             'vhdetail' => $request->get('vhreason'),
             'pregnant' => false,
             'ereception' => false,
