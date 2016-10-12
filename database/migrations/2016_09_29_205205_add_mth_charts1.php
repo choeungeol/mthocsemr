@@ -27,7 +27,7 @@ class AddMthCharts1 extends Migration
     public function down()
     {
         Schema::table('mth_charts', function (Blueprint $table) {
-            $table->dropColumn('timestamps');
+            $table->dropColumn(timestamps());
         });
     }
 }
