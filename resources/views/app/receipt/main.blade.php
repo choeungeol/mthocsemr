@@ -11,7 +11,6 @@
                             <table class="table table-condensed table-border" style="font-size:12px;">
                                 <thead>
                                 <tr>
-                                    <th>차트번호</th>
                                     <th>이름</th>
                                     <th>생년월일</th>
                                     <th>성별</th>
@@ -22,7 +21,6 @@
                                 <tbody>
                                 @foreach($patients as $p)
                                     <tr>
-                                        <td>{{ $p->id }}</td>
                                         <td>{{ $p->name }}</td>
                                         <td>{{ $p->birthday }}</td>
                                         <td></td>
