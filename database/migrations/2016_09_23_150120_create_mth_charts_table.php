@@ -34,6 +34,7 @@ class CreateMthChartsTable extends Migration
             $table->boolean('elhospital')->default(false); //입퇴원 상태
             $table->text('hcselect')->nullable();   //진료실선택
             $table->text('gohyupjin')->nullable(); //협진실 선택
+            $table->timestamps();
 
         });
     }
