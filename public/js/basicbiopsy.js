@@ -1,25 +1,24 @@
 /**
  * Created by aqua on 2016-08-31.
  */
+var app = angular.module('basicBiopsy',[]);
 
-angular.module('Mth.BasicBiopsy', ['ngResource', 'ui.router', 'angular-ladda']);
-
-angular.module('Mth.BasicBiopsy')
-    .config(function($stateProvider) {
-            $stateProvider
-                .state('basicbiopsy', {
-                    url: "",
-                    views: {
-                        "basicbiopsyContent": { templateUrl: "/basicbiopsy/view/intro" }
-                    }
-                });
-        }
-    );
+app.controller('basicBiopsyCtrl', function($scope, $http) {
 
 
+    $scope.getInfo = function(){
 
-angular.module('Mth.BasicBiopsy')
-    .controller('MainController',['$scope', '$http' , '$state', function($scope, $http, $state) {
+        var id = $('#id').text();
+        var name = $('#name').text();
+        var birthday = $('#birthday').text();
+        var gender = $('#gender').text();
+        var memo = $('#memo').text();
+        $scope.cno = id;
+        $scope.pname = name;
+        $scope.birthday = birthday;
+        $scope.gender = gender;
+        $scope.memo = memo;
 
+    };
 
-    }]);
+});

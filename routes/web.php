@@ -71,14 +71,10 @@ Route::group(['prefix' => 'receipt', 'middleware' => 'auth'], function() {
 
 Route::group(['prefix' => 'basicbiopsy', 'middleware' => 'auth'], function() {
 
-    Route::get('/', 'BasicBiopsyController@getMain');
+    Route::get('/', 'BasicBiopsyController@index');
 
-    Route::get('view/{apps?}', function($apps = null) {
-        if ($apps === null or $apps == 'intro') {
-            return view('app.basicbiopsy.intro.intro');
+    Route::post('/store','BasicBiopsyController@store');
 
-        }
-    });
 });
 
 Route::group(['prefix' => 'healthcare', 'middleware' => 'auth'], function() {

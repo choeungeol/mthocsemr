@@ -13,7 +13,7 @@ class CreateMthDisease extends Migration
      */
     public function up()
     {
-        Schema::create('mth_disease', function (Blueprint $table) {
+        Schema::create('mth_diseases', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('chart_id');
@@ -36,6 +36,6 @@ class CreateMthDisease extends Migration
      */
     public function down()
     {
-        Schema::drop('mth_disease');
+        Schema::drop('mth_diseases');
     }
 }

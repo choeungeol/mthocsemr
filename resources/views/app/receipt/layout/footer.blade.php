@@ -7,6 +7,6 @@
 <script src="bower_components/ladda/js/ladda.js"></script>
 <script src="bower_components/angular-ladda/dist/angular-ladda.min.js"></script>
 <script src="js/receipt.js"></script>
-
+<script src="js/basicbiopsy.js"></script>
 </body>
 </html>

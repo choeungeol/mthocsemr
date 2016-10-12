@@ -13,7 +13,7 @@ class CreateBasicBiopsy extends Migration
      */
     public function up()
     {
-        Schema::create('mth_basic_biopsy', function (Blueprint $table) {
+        Schema::create('mth_basic_biopsies', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('chart_id')->unsigned();
@@ -38,6 +38,6 @@ class CreateBasicBiopsy extends Migration
      */
     public function down()
     {
-        Schema::drop('mth_basic_biopsy');
+        Schema::drop('mth_basic_biopsies');
     }
 }
