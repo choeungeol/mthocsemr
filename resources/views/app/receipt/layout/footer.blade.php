@@ -9,5 +9,6 @@
 <script src="js/receipt.js"></script>
 <script src="js/basicbiopsy.js"></script>
 <script src="js/rclick.js"></script>
+
 </body>
 </html>

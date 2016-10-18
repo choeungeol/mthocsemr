@@ -66,7 +66,7 @@
                                                     <td><input type="text" class="form-control input-sm" placeholder="내원사유" name="vhreason" required></td>
                                                     <td><input type="text" class="form-control input-sm" placeholder="이메일" name="email" required></td>
                                                 </tr>
-                                                <tr>
+                                                <tr context="context2">
                                                     <td><input type="text" class="form-control input-sm" placeholder="휴대전화" name="cellphone" required></td>
                                                     <td><input type="text" class="form-control input-sm" placeholder="생년월일" name="birthday" required></td>
                                                     <td><input type="text" class="form-control input-sm" placeholder="미수금"></td>
