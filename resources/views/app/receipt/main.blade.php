@@ -2,8 +2,8 @@
 
 <!-- 컨텐츠 -->
 @section('content')
-    <section class="page-content">
-        <div class="page-content-inner">
+    <section class="page-content" ng-app="receipt">
+        <div class="page-content-inner" ng-controller="receiptCtrl">
             <div class="row">
                 <section class="panel">
                     <div class="panel-body">
@@ -30,7 +30,6 @@
                                 @endforeach
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </section>
@@ -57,34 +56,41 @@
 
                                     <div class="panel-body">
                                         <div class="table-responsive">
-                                            <table class="table table-hover">
+                                            <table class="table table-hover" on-right-click="ShowContextMenu()">
                                                 <tbody>
-                                                <tr>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="수진자명" name="name" ></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="전화번호" name="phone"></td>
+                                                <tr context="context1">
+                                                    <td><input type="text" class="form-control input-sm" placeholder="수진자명" name="name" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="전화번호" name="phone" required></td>
                                                     <td><input type="text" class="form-control input-sm" placeholder="혈액형" ></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="주민등록번호" name="id_num"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="내원사유" name="vhreason"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="이메일" name="email"></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="주민등록번호" name="id_num" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="내원사유" name="vhreason" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="이메일" name="email" required></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="휴대전화" name="cellphone"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="생년월일" name="birthday"></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="휴대전화" name="cellphone" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="생년월일" name="birthday" required></td>
                                                     <td><input type="text" class="form-control input-sm" placeholder="미수금"></td>
                                                     <td><input type="text" class="form-control input-sm" placeholder="나이"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="사업자등록번호" name="buss_num"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="사업장명칭" name="buss_nam"></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="사업자등록번호" name="buss_num" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="사업장명칭" name="buss_nam" required></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="우편번호" name="postal_code"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="주소" name="addr"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="상세주소" name="addr_detail"></td>
-                                                    <td><input type="text" class="form-control input-sm" placeholder="장애분류키" name="dis_id"></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="우편번호" name="postal_code" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="주소" name="addr" required></td>
+                                                    <td><input type="text" class="form-control input-sm" placeholder="상세주소" name="addr_detail" required></td>
+                                                    <td>
+                                                        <select name="dis_id" class="form-control input-sm" required>
+                                                            @foreach($dis as $d)
+                                                                <option value="{{ $d->id }}">{{ $d->id }}.{{ $d->code_name }}</option>
+                                                            @endforeach
+                                                            <option></option>
+                                                        </select>
+                                                    </td>
                                                     <td><input type="text" class="form-control input-sm" style="display:none;"></td>
                                                     <td><input type="text" class="form-control input-sm" style="display:none;"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="6"><textarea class="form-control" rows="2" name="memo"></textarea></td>
+                                                    <td colspan="6"><textarea class="form-control" rows="2" name="memo" required></textarea></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -139,7 +145,7 @@
                                                 </select>
                                             </td>
                                             <td><input type="text" class="form-control input-sm" placeholder="예외구분"></td>
-                                            <td><input type="text" class="form-control input-sm" ng-model="cname" placeholder="사업장기호"></td>
+                                            <td><input type="text" class="form-control input-sm" placeholder="사업장기호" required></td>
                                             <td><input type="text" class="form-control input-sm" placeholder="취득일자"></td>
                                             <td><select class="form-control input-sm" data-placeholder="자격구분">
                                                     <option></option>
@@ -151,8 +157,14 @@
                                             <td><input type="text" class="form-control input-sm" placeholder="유효기간"></td>
                                             <td><input type="text" class="form-control input-sm" placeholder="비고"></td>
                                             <td><input type="text" class="form-control input-sm" placeholder="피보험자 성명"></td>
-                                            <td><input type="text" class="form-control input-sm" placeholder="보훈구분키" name="vet_id"></td>
-                                            <td><input type="text" class="form-control input-sm" placeholder="보훈번호" name="vet_num"></td>
+                                            <td>
+                                                <select name="vet_id" class="form-control input-sm" required>
+                                                    @foreach($vet as $v)
+                                                        <option value="{{ $v->id }}">{{ $v->id }}.{{ $v->code_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td><input type="text" class="form-control input-sm" placeholder="보훈번호" name="vet_num"required></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -174,14 +186,14 @@
                                 <div class="panel-body">
                                     <div class="btn-group margin-right-20" data-toggle="buttons">
                                         <label class="btn btn-primary-outline btn-sm">
-                                            <input type="radio" name="hcselect" value="A">
+                                            <input type="radio" name="hcselect" value="A" required>
                                             진료실A
                                         </label>
-                                        <label class="btn btn-primary-outline btn-sm" value="B">
+                                        <label class="btn btn-primary-outline btn-sm" value="B" required>
                                             <input type="radio" name="hcselect">
                                             진료실B
                                         </label>
-                                        <label class="btn btn-primary-outline btn-sm" value="C">
+                                        <label class="btn btn-primary-outline btn-sm" value="C" required>
                                             <input type="radio" name="hcselect">
                                             진료실C
                                         </label>
@@ -189,14 +201,14 @@
 
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-secondary-outline btn-sm">
-                                            <input type="radio" name="hcselect" value="OA">
+                                            <input type="radio" name="hcselect" value="OA" required>
                                             한방진료실A
                                         </label>
-                                        <label class="btn btn-secondary-outline btn-sm" value="OB">
+                                        <label class="btn btn-secondary-outline btn-sm" value="OB" required>
                                             <input type="radio" name="hcselect">
                                             한방진료실B
                                         </label>
-                                        <label class="btn btn-secondary-outline btn-sm" value="OC">
+                                        <label class="btn btn-secondary-outline btn-sm" value="OC" required>
                                             <input type="radio" name="hcselect">
                                             한방진료실C
                                         </label>
@@ -212,7 +224,18 @@
             </div>
             </form>
         </div>
-
+        <ul id="context1" class="dropdown-menu">
+            <li><a ng-click="edit()">Edit</a></li>
+            <li><a ng-click="link()">Link</a></li>
+            <li><a ng-click="delete()">Delete</a></li>
+            <li><hr></li>
+            <li><a ng-click="properties()">Properties</a></li>
+        </ul>
+        <ul id="context2" class="dropdown-menu">
+            <li><a ng-click="edit()">Edit</a></li>
+            <li class="divider"></li>
+            <li><a ng-click="properties()">Properties</a></li>
+        </ul>
     </section>
 
 @endsection

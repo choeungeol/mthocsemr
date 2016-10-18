@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\MthChart;
 use App\MthPatient;
+use App\MthCodeGroup;
 use Illuminate\Http\Request;
 
 class ReceiptController extends Controller
@@ -13,7 +14,15 @@ class ReceiptController extends Controller
     {
 
         $patients = MthPatient::all();
-        return view('app.receipt.main')->with('patients',$patients);
+
+        $dis = MthCodeGroup::find(1)->mth_codes;
+
+        $vet = MthCodeGroup::find(8)->mth_codes;
+
+        return view('app.receipt.main')
+            ->with('patients',$patients)
+            ->with('dis',$dis)
+            ->with('vet',$vet);
     }
 
     public function create()
